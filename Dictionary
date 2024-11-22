@@ -10,7 +10,6 @@ namespace DSA_Activity_10._1
     {
         static void Main(string[] args)
         {     
-                //Marzan, Cleverson L.
                 HashSet<int> mySetA = new HashSet<int>() { 2, 4, 6, 7, 9 };
                 HashSet<int> mySetB = new HashSet<int>() { 1, 2, 3, 5, 6, 8 };
 
