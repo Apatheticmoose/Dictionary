@@ -1,0 +1,79 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+class Program
+{
+        static void Main()
+    {
+        string[] names1 = new string[] {
+            "mahesh", "sabnis", "manish", "sharma", "saket", "karnik"};
+
+        string[] names2 = new string[] {
+            "suprotim", "agarwal", "vikram", "pendse", "mahesh", "mitkari"};
+
+        HashSet<string> hSetN1 = new HashSet<string>(names1);
+        HashSet<string> hSetN2 = new HashSet<string>(names2);
+
+        Console.WriteLine("Data in First HashSet:");
+        foreach (var n in hSetN1)
+        {
+            Console.WriteLine(n);
+        }
+        Console.WriteLine("_______________________________________________________________");
+
+        Console.WriteLine("Data in Second HashSet:");
+        foreach (var n in hSetN2)
+        {
+            Console.WriteLine(n);
+        }
+        Console.WriteLine("________________________________________________________________");
+
+        HashSet<string> unionSet = new HashSet<string>(hSetN1);
+        unionSet.UnionWith(hSetN2);
+
+        Console.WriteLine("Union of both sets:");
+        foreach (var n in unionSet)
+        {
+            Console.WriteLine(n);
+        }
+        Console.WriteLine($"Number of items in Union: {unionSet.Count}");
+        Console.WriteLine("_______________________________________________________________");
+
+        HashSet<string> intersectionSet = new HashSet<string>(hSetN1);
+        intersectionSet.IntersectWith(hSetN2);
+
+        Console.WriteLine("Intersection of both sets:");
+        foreach (var n in intersectionSet)
+        {
+            Console.WriteLine(n);
+        }
+        Console.WriteLine($"Number of items in Intersection: {intersectionSet.Count}");
+        Console.WriteLine("_______________________________________________________________");
+
+        HashSet<string> differenceSet = new HashSet<string>(hSetN1);
+        differenceSet.ExceptWith(hSetN2);
+
+        Console.WriteLine("Difference (First set - Second set):");
+        foreach (var n in differenceSet)
+        {
+            Console.WriteLine(n);
+        }
+        Console.WriteLine($"Number of items in Difference: {differenceSet.Count}");
+        Console.WriteLine("_______________________________________________________________");
+
+        HashSet<string> symmetricDifference = new HashSet<string>(hSetN1);
+
+        symmetricDifference.SymmetricExceptWith(hSetN2);
+
+        Console.WriteLine("Symmetric Difference of both sets:");
+        foreach (var n in symmetricDifference)
+        {
+            Console.WriteLine(n);
+        }
+        Console.WriteLine($"Number of items in Symmetric Difference: {symmetricDifference.Count}");
+        Console.WriteLine("_______________________________________________________________");
+        Console.ReadKey();
+    }
+}
