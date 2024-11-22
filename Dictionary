@@ -1,0 +1,87 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DSA_Activity_10._1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {     
+                //Marzan, Cleverson L.
+                HashSet<int> mySetA = new HashSet<int>() { 2, 4, 6, 7, 9 };
+                HashSet<int> mySetB = new HashSet<int>() { 1, 2, 3, 5, 6, 8 };
+
+                string choice;
+                do
+                {
+                    Console.WriteLine("--CHOOSE OPERATION--");
+                    Console.WriteLine("[1] Union");
+                    Console.WriteLine("[2] Intersection");
+                    Console.WriteLine("[3] Difference");
+                    Console.WriteLine("[4] Symetric Difference");
+                    Console.WriteLine("[5] Exit");
+                    Console.Write("Enter your choice: \n");
+
+                    choice = Console.ReadLine();
+                    switch (choice)
+                    {
+
+                        case "1":
+                            mySetA.UnionWith(mySetB);
+                            Console.Write("{");
+                            foreach (var i in mySetA)
+                            {
+                                Console.Write($"{i} ");
+                            }
+
+                            Console.Write("}");
+                            Console.WriteLine();
+                            break;
+
+                        case "2":
+                            mySetA.IntersectWith(mySetB);
+                            Console.Write("{");
+                            foreach (var i in mySetA)
+                            {
+                                Console.Write($"{i} ");
+                            }
+                            Console.Write("}");
+                            Console.WriteLine();
+                            break;
+
+                        case "3":
+                            mySetA.ExceptWith(mySetB);
+                            Console.Write("{");
+                            foreach (var i in mySetA)
+                            {
+                                Console.Write($"{i} ");
+                            }
+                            Console.Write("}");
+                            Console.WriteLine();
+                            break;
+
+                        case "4":
+                            mySetA.SymmetricExceptWith(mySetB);
+                            Console.Write("{");
+                            foreach (var i in mySetA)
+                            {
+                                Console.Write($"{i} ");
+                            }
+                            Console.Write("}");
+                            Console.WriteLine();
+                            break;
+
+                        case "5":
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                } while (choice != "5");
+            }
+        }
+    }
